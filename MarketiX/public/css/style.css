@@ -1,0 +1,283 @@
+/* ===== Dashboard Layout Fix ===== */
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #020617;
+  color: #fff;
+  padding: 24px 16px;
+  position: fixed;
+  top: 64px;              /* ارتفاع الـ navbar */
+  left: 0;
+  height: calc(100vh - 64px);
+}
+
+.sidebar a {
+  display: block;
+  color: #cbd5f5;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+  background: #1e293b;
+  color: #fff;
+}
+
+/* Main Content */
+.dashboard-content {
+  margin-left: 240px;     /* نفس عرض الـ sidebar */
+  padding: 32px;
+  width: 100%;
+}
+
+/* Cards */
+.stat-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: all .2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+}
+/* ===============================
+   STORE IMAGE – PROFESSIONAL UI
+================================ */
+
+/* Seller Panel – Store Image */
+.store-image-wrapper {
+  width: 100%;
+  height: 240px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+}
+
+.store-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 🔥 أهم سطر */
+  background: #fff;
+}
+
+/* Placeholder (No Image) */
+.store-image-placeholder {
+  width: 100%;
+  height: 240px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px dashed #d1d5db;
+}
+
+/* Marketplace – Store Card Image */
+.marketplace-store-image {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.marketplace-store-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+.marketplace-store-placeholder {
+  width: 100%;
+  height: 160px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f9fafb, #e5e7eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 600;
+}
+/* ===============================
+   Seller Store Image Styling
+================================ */
+
+.store-image-wrapper {
+  width: 100%;
+  height: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.store-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e5e7eb, #f8fafc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+
+/* ===== Layout ===== */
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #0f172a;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+/* Content */
+.dashboard-content {
+  flex: 1;
+  padding: 24px;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 992px) {
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    z-index: 1050;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .dashboard-content {
+    padding: 16px;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 1040;
+  }
+
+  .sidebar-overlay.show {
+    display: block;
+  }
+}
+
+/* ===============================
+   Global Responsive Fix (IMPORTANT)
+================================ */
+
+/* المحتوى الأساسي */
+.dashboard-content,
+.container,
+.container-fluid {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* كل فورم */
+form {
+  max-width: 100%;
+}
+
+/* inputs & selects */
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+/* الجداول */
+table {
+  width: 100%;
+  min-width: 600px;
+}
+
+/* wrapper للجداول */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* cards */
+.card,
+.card-custom,
+.stat-card {
+  max-width: 100%;
+}
+
+/* ========== MOBILE ONLY ========== */
+@media (max-width: 768px) {
+
+  /* اخفاء العرض الثابت */
+  .dashboard-content {
+    padding: 1rem;
+  }
+
+  /* تصغير الفورم */
+  form {
+    font-size: 14px;
+  }
+
+  /* inputs أصغر */
+  input,
+  select,
+  textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* الجداول تمرير أفقي */
+  table {
+    font-size: 13px;
+  }
+}
